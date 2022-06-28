@@ -1,0 +1,7 @@
+loguru
+fastapi
+uvicorn
+furl
+motor
+ujson
+aioredis
