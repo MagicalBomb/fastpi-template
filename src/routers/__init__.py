@@ -4,4 +4,6 @@ from fastapi import APIRouter
 api_router = APIRouter()
 
 
-from schemas.base import CamelModel
+from .user import router
+
+api_router.include_router(router)
