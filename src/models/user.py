@@ -5,5 +5,7 @@ from .base import MODEL
 __all__ = ["User"]
 
 class User(MODEL):
-    __tablename__ = 'user'
-    email = Column(types.VARCHAR(128), primary_key=True, comment="user email")
+
+    id = Column(types.Integer, primary_key=True, comment="user id")
+    email = Column(types.VARCHAR(128), comment="user email")
+    name = Column(types.VARCHAR(128), comment="user name")

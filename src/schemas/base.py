@@ -20,18 +20,18 @@ class CamelModel(BaseModel):
 
 
 class PagingParams(CamelModel):
-    offset: PositiveInt
-    limit: PositiveInt
+    offset: PositiveInt = 1
+    limit: PositiveInt = 20
 
     class Config:
         allow_population_by_field_name = True
 
     def populate_result(self, total: int, items: list[Any], **kwargs) -> 'PagingResult':
-        return PagingResult(page=self.offset, per_page=self.limit, total=total, items=items, **kwargs)
+        return PagingResult(offset=self.offset, limit=self.limit, total=total, items=items, **kwargs)
 
     @property
     def skip(self):
-        return (self.page - 1) * self.per_page
+        return (self.offset - 1) * self.limit
 
 
 class PagingResult(PagingParams):
