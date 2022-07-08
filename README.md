@@ -49,3 +49,6 @@ pre-commit install --hook-type commit-msg
 # uinstall
 pre-commit uninstall --hook-type commit-msg
 ```
+
+## config mysql url
+export SQLALCHEMY_DATABASES='{"default": {"uri":"mysql+pymysql://{user}:{passwd}@{host}:{port}/{database}?charset=utf8", "pool_size":2}}'

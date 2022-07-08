@@ -11,6 +11,7 @@ uvicorn = "^0.18.2"
 loguru = "pydantic"
 pydantic = "^1.9.1"
 humps = "^0.2.2"
+SQLAlchemy = "1.4.11"
 
 [tool.poetry.dev-dependencies]
 bump2version = "^1.0.1"

@@ -1,7 +1,8 @@
+from .v1.user import router
 from fastapi import APIRouter
 
 
 api_router = APIRouter()
 
 
-from schemas.base import CamelModel
+api_router.include_router(router, prefix="/v1")
